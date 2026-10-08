@@ -1,0 +1,34 @@
+name: Fidelity report
+description: AVAFlight differs from the 1986 IBM PC DOS original.
+labels: [fidelity]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        AVAFlight follows the **1986 IBM PC DOS** release. Behaviour from the Amiga, C64 or Genesis ports, or from Starflight 2, is not used as the reference. Please check [FIDELITY.md](https://github.com/Harlock123/AVAFlight-Starflight/blob/main/docs/FIDELITY.md) first: some differences are deliberate or documented reconstructions.
+  - type: input
+    id: system
+    attributes:
+      label: Game system
+      placeholder: e.g. hyperspace fuel use, Velox dialogue, combat damage
+    validations:
+      required: true
+  - type: textarea
+    id: original
+    attributes:
+      label: How the original behaves
+    validations:
+      required: true
+  - type: textarea
+    id: avaflight
+    attributes:
+      label: How AVAFlight behaves
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Manual page, in-game observation, published walkthrough, video timestamp... Include URLs, and say which platform and version the source covers. Please do not paste copyrighted game text beyond short quotes.
+    validations:
+      required: true

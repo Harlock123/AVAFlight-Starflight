@@ -1,0 +1,28 @@
+name: Feature request
+description: Suggest an improvement or a Modern-mode convenience.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Modern-mode additions must keep Classic's rules and balance unchanged, and AVAFlight does not add quest markers, autopilot routing, crafting or skill trees, or online features. See [CONTRIBUTING.md](https://github.com/Harlock123/AVAFlight-Starflight/blob/main/CONTRIBUTING.md).
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+    validations:
+      required: true
+  - type: dropdown
+    id: preset
+    attributes:
+      label: Which preset should it affect?
+      options:
+        - Modern only
+        - Both (accessibility or interface)
+        - Not sure

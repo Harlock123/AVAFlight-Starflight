@@ -1,0 +1,66 @@
+name: Bug report
+description: Something in AVAFlight doesn't work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! For **historical-accuracy** issues (AVAFlight behaves differently from the 1986 original), please use the *Fidelity report* form instead. For **security** problems, do not open an issue; see [SECURITY.md](https://github.com/Harlock123/AVAFlight-Starflight/blob/main/SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: AVAFlight version
+      description: Shown at the bottom right of the title screen, or the commit if built from source.
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      options:
+        - Windows x64
+        - Linux x64
+        - macOS Intel (x64)
+        - macOS Apple Silicon (arm64)
+        - Other (say below)
+    validations:
+      required: true
+  - type: dropdown
+    id: build
+    attributes:
+      label: How are you running it?
+      options:
+        - Release download
+        - Built from source
+    validations:
+      required: true
+  - type: dropdown
+    id: preset
+    attributes:
+      label: Preset
+      options:
+        - Modern
+        - Classic
+        - Not relevant
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start a new Modern game
+        2. Launch and enter hyperspace
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: Screenshots, logs or save file
+      description: Attach a save file if the bug depends on game state (see docs/SAVES.md for where saves are stored).

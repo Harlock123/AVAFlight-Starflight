@@ -20,7 +20,7 @@ Read [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) before making larger changes.
 
 ## Reporting bugs
 
-Open a GitHub issue with:
+Open a GitHub issue using the **Bug report** form (or **Fidelity report** for differences from the 1986 original). Security problems go through [SECURITY.md](SECURITY.md), not public issues. Include:
 
 - your OS and CPU architecture
 - whether you ran a release binary or built from source

@@ -5,6 +5,7 @@ All notable changes to AVAFlight are documented here. The format follows [Keep a
 ## [Unreleased]
 
 ### Added
+- SECURITY.md, issue forms (bug, fidelity, feature request) and a pull request template.
 - CODE_OF_CONDUCT.md: Contributor Covenant 2.1.
 - CONTRIBUTING.md: build, project, fidelity, legal and pull-request guidelines.
 - README: a full-size gameplay screenshot (terrain vehicle) near the top.

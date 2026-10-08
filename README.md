@@ -79,6 +79,7 @@ Verification so far:
 | [CHANGELOG.md](CHANGELOG.md) | Release history |
 | [CONTRIBUTING.md](CONTRIBUTING.md) | How to build, contribution rules, pull requests |
 | [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md) | Contributor Covenant 2.1 |
+| [SECURITY.md](SECURITY.md) | Supported versions and how to report vulnerabilities |
 
 ## Screenshots
 
