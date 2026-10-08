@@ -19,6 +19,8 @@ There are two presets:
 
 ![Main menu](screenshots/01_main_menu.png)
 
+![AVAFlight gameplay: driving the terrain vehicle across a jungle world, with the ship, wildlife, crew status and the terrain-vehicle menu](screenshots/08_terrain_vehicle.png)
+
 ## Prerequisites
 
 - **.NET SDK 10.0.400 or later.** `global.json` pins the 10.0.400 SDK with `rollForward: latestFeature`.
