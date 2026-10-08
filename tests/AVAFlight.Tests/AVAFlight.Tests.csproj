@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <IsPackable>false</IsPackable>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>AVAFlight.Tests</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Using Include="Xunit" />
+    <Using Include="AVAFlight.Core.Random" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" />
+    <PackageReference Include="xunit.v3" />
+    <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Avalonia.Headless.XUnit" />
+    <PackageReference Include="Avalonia.Skia" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AVAFlight.Core\AVAFlight.Core.csproj" />
+    <ProjectReference Include="..\..\src\AVAFlight.Infrastructure\AVAFlight.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\AVAFlight.Avalonia\AVAFlight.Avalonia.csproj" />
+  </ItemGroup>
+</Project>

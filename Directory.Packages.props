@@ -1,0 +1,22 @@
+<Project>
+  <!-- All dependency versions are pinned centrally. Verified against nuget.org on 2026-10-08. -->
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <AvaloniaVersion>12.1.3</AvaloniaVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="Avalonia" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Desktop" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Skia" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Headless" Version="$(AvaloniaVersion)" />
+    <PackageVersion Include="Avalonia.Headless.XUnit" Version="$(AvaloniaVersion)" />
+    <!-- SkiaSharp version matches the one Avalonia.Skia 12.1.3 depends on. -->
+    <PackageVersion Include="SkiaSharp" Version="3.119.4" />
+    <!-- SDL3 (zlib) + C# bindings (MIT): audio output and gamepad input only; Avalonia owns the window. -->
+    <PackageVersion Include="ppy.SDL3-CS" Version="2026.1002.1" />
+    <PackageVersion Include="xunit.v3" Version="3.2.2" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
+  </ItemGroup>
+</Project>

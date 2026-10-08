@@ -1,0 +1,26 @@
+// Mineral values in MU per cubic metre (manual chart; corroborated by starflt.com table).
+// "rarity" (relative abundance weight for deposit generation) is a reconstruction assumption.
+[
+  { "id": "lead", "name": "Lead", "valuePerUnit": 40, "rarity": 10 },
+  { "id": "iron", "name": "Iron", "valuePerUnit": 60, "rarity": 10 },
+  { "id": "cobalt", "name": "Cobalt", "valuePerUnit": 80, "rarity": 9 },
+  { "id": "nickel", "name": "Nickel", "valuePerUnit": 100, "rarity": 9 },
+  { "id": "copper", "name": "Copper", "valuePerUnit": 120, "rarity": 8 },
+  { "id": "zinc", "name": "Zinc", "valuePerUnit": 140, "rarity": 8 },
+  { "id": "molybdenum", "name": "Molybdenum", "valuePerUnit": 160, "rarity": 7 },
+  { "id": "tin", "name": "Tin", "valuePerUnit": 180, "rarity": 7 },
+  { "id": "magnesium", "name": "Magnesium", "valuePerUnit": 200, "rarity": 6 },
+  { "id": "aluminum", "name": "Aluminum", "valuePerUnit": 220, "rarity": 6 },
+  { "id": "titanium", "name": "Titanium", "valuePerUnit": 240, "rarity": 5 },
+  { "id": "chromium", "name": "Chromium", "valuePerUnit": 260, "rarity": 5 },
+  { "id": "antimony", "name": "Antimony", "valuePerUnit": 280, "rarity": 4 },
+  { "id": "promethium", "name": "Promethium", "valuePerUnit": 300, "rarity": 4 },
+  { "id": "mercury", "name": "Mercury", "valuePerUnit": 320, "rarity": 3.5 },
+  { "id": "tungsten", "name": "Tungsten", "valuePerUnit": 340, "rarity": 3 },
+  { "id": "silver", "name": "Silver", "valuePerUnit": 360, "rarity": 2.5 },
+  { "id": "gold", "name": "Gold", "valuePerUnit": 380, "rarity": 2 },
+  { "id": "platinum", "name": "Platinum", "valuePerUnit": 400, "rarity": 1.6 },
+  { "id": "plutonium", "name": "Plutonium", "valuePerUnit": 420, "rarity": 1.3 },
+  { "id": "rodnium", "name": "Rodnium", "valuePerUnit": 440, "rarity": 1 },
+  { "id": "endurium", "name": "Endurium", "valuePerUnit": 1000, "rarity": 1.2 }
+]

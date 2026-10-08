@@ -1,0 +1,146 @@
+// AVAFlight world anchors. Coordinates marked "documented" are the story-relevant locations stated in
+// public walkthroughs / Interstel notices / alien dialogue as summarised in docs/RESEARCH.md. Everything
+// else in the galaxy is generated from the seed (the original star map is NOT copied).
+// Map orientation: high X is "coreward" (toward the flaring dead zone), low X is "rimward".
+{
+  "systems": [
+    { "name": "Arth", "x": 125, "y": 100, "class": "G", "planetCount": 5, "evidence": "documented", "flareDay": 300,
+      "planets": [
+        { "orbit": 1, "type": "Molten", "mineralDensity": "Rich", "bioDensity": "None", "atmosphere": "None", "gravity": 0.6, "mass": 2 },
+        { "orbit": 2, "name": "Arth", "type": "Ocean", "atmosphere": "Moderate", "atmosphereComposition": "Nitrogen, Oxygen",
+          "hydrosphere": "Water", "temperature": "Temperate", "weather": "Moderate", "gravity": 1.0, "mass": 3, "bioDensity": "Dense" },
+        { "orbit": 3, "type": "Rock", "atmosphere": "Thin", "gravity": 0.8, "mass": 2, "mineralDensity": "Moderate",
+          "sites": [ { "id": "arth3-ruin", "kind": "Ruin", "lat": 12, "lon": -40, "ref": "endurium-cache" } ] },
+        { "orbit": 4, "type": "Frozen", "gravity": 0.4, "mass": 1,
+          "sites": [ { "id": "arth4-ruin", "kind": "Ruin", "lat": -30, "lon": 75, "ref": "endurium-cache" } ] },
+        { "orbit": 5, "type": "GasGiant" }
+      ] },
+    { "name": "Arth's neighbour", "x": 121, "y": 104, "class": "K", "planetCount": 3, "evidence": "reconstructed",
+      "planets": [ { "orbit": 2, "type": "Rock", "atmosphere": "Thin", "gravity": 0.9, "mass": 2,
+        "sites": [ { "id": "neighbour-ruin", "kind": "Message", "lat": 17, "lon": 162, "ref": "msg-first-wave-ruin" } ] } ] },
+    { "name": "Colony candidate", "x": 123, "y": 101, "class": "G", "planetCount": 4, "evidence": "documented",
+      "planets": [ { "orbit": 3, "type": "Jungle", "atmosphere": "Moderate", "atmosphereComposition": "Nitrogen, Oxygen", "hydrosphere": "Water",
+        "temperature": "Temperate", "weather": "Moderate", "gravity": 0.95, "mass": 3, "bioDensity": "Moderate", "mineralDensity": "Light" } ] },
+
+    { "name": "Sol", "x": 215, "y": 86, "class": "G", "planetCount": 6, "evidence": "documented", "flareDay": -1000,
+      "planets": [
+        { "orbit": 3, "name": "Earth", "type": "Desert", "atmosphere": "Thin", "atmosphereComposition": "Carbon dioxide, Nitrogen",
+          "hydrosphere": "None", "temperature": "Scorching", "weather": "Stormy", "gravity": 1.0, "mass": 3, "bioDensity": "None",
+          "sites": [
+            { "id": "earth-flare-log", "kind": "Message", "lat": 40, "lon": -74, "ref": "msg-earth-flare-log" },
+            { "id": "earth-institute", "kind": "Message", "lat": 12, "lon": -104, "ref": "msg-institute-station" } ] },
+        { "orbit": 4, "name": "Mars", "type": "Desert", "atmosphere": "VeryThin", "gravity": 0.38, "mass": 2, "bioDensity": "None",
+          "sites": [ { "id": "mars-ring", "kind": "Artifact", "lat": 70, "lon": 20, "ref": "ring-device" } ] }
+      ] },
+
+    { "name": "Crystal Planet", "x": 192, "y": 152, "class": "O", "planetCount": 1, "evidence": "documented",
+      "planets": [ { "orbit": 1, "name": "Crystal Planet", "type": "Crystal", "atmosphere": "None", "hydrosphere": "None",
+        "temperature": "Frigid", "weather": "Calm", "gravity": 1.4, "mass": 3, "bioDensity": "None", "mineralDensity": "Rich",
+        "sites": [
+          { "id": "crystal-nexus", "kind": "Nexus", "lat": 8, "lon": -33, "ref": "nexus" },
+          { "id": "mcconnell-log", "kind": "Message", "lat": -10, "lon": 20, "ref": "msg-mcconnell-log" } ] } ] },
+
+    { "name": "Sphexi", "x": 132, "y": 165, "class": "F", "planetCount": 3, "territory": "velox", "evidence": "documented",
+      "planets": [ { "orbit": 1, "name": "Sphexi", "type": "Desert", "atmosphere": "Thin", "gravity": 0.9, "mass": 2, "bioDensity": "Light",
+        "sites": [ { "id": "sphexi-orb", "kind": "Artifact", "lat": 46, "lon": 14, "ref": "crystal-orb" } ] } ] },
+    { "name": "Votiputox", "x": 141, "y": 178, "class": "K", "planetCount": 4, "territory": "velox", "evidence": "reconstructed",
+      "planets": [ { "orbit": 2, "name": "Votiputox", "type": "Jungle", "atmosphere": "Thick", "hydrosphere": "Water", "temperature": "Hot",
+        "gravity": 1.1, "mass": 3, "bioDensity": "Dense" } ] },
+
+    { "name": "Eleran (Thoss)", "x": 129, "y": 33, "class": "F", "planetCount": 5, "territory": "elowan", "evidence": "documented", "flareDay": 255,
+      "planets": [
+        { "orbit": 2, "name": "Eleran", "type": "Jungle", "atmosphere": "Moderate", "atmosphereComposition": "Nitrogen, Oxygen", "hydrosphere": "Water",
+          "temperature": "Temperate", "gravity": 0.9, "mass": 3, "bioDensity": "Rich" },
+        { "orbit": 4, "name": "Thoss", "type": "Desert", "atmosphere": "Thin", "temperature": "Hot", "gravity": 1.2, "mass": 3, "bioDensity": "Light" } ] },
+    { "name": "Elan", "x": 148, "y": 63, "class": "G", "planetCount": 3, "territory": "elowan", "evidence": "documented",
+      "planets": [ { "orbit": 2, "name": "Elan", "type": "Ocean", "atmosphere": "Moderate", "atmosphereComposition": "Nitrogen, Oxygen", "hydrosphere": "Water",
+        "temperature": "Temperate", "gravity": 0.8, "mass": 2, "bioDensity": "Rich" } ] },
+    { "name": "Thrynn outpost", "x": 112, "y": 48, "class": "K", "planetCount": 3, "territory": "thrynn", "evidence": "reconstructed" },
+
+    { "name": "Spemin home", "x": 82, "y": 148, "class": "M", "planetCount": 4, "territory": "spemin", "evidence": "documented",
+      "planets": [ { "orbit": 2, "name": "Spewia", "type": "Ocean", "atmosphere": "Thick", "hydrosphere": "Water", "temperature": "Temperate",
+        "gravity": 1.0, "mass": 3, "bioDensity": "Dense" } ] },
+    { "name": "City of the Ancients", "x": 56, "y": 144, "class": "B", "planetCount": 2, "evidence": "documented (Genesis guide; DOS text only says 'nebula outward of the Spemin homeworld')",
+      "planets": [ { "orbit": 1, "type": "Rock", "atmosphere": "None", "gravity": 0.7, "mass": 2,
+        "sites": [
+          { "id": "ancient-city-pearl", "kind": "Artifact", "lat": 5, "lon": 5, "ref": "crystal-pearl" },
+          { "id": "ancient-city-ruin", "kind": "Ruin", "lat": 10, "lon": 12, "ref": "endurium-cache" } ] } ] },
+
+    { "name": "Uhlek brain world", "x": 55, "y": 32, "class": "K", "planetCount": 4, "territory": "uhlek", "evidence": "documented",
+      "planets": [ { "orbit": 3, "name": "Uhlek mind world", "type": "Jungle", "atmosphere": "Thick", "hydrosphere": "Water", "temperature": "Temperate",
+        "gravity": 1.3, "mass": 4, "bioDensity": "Rich",
+        "sites": [ { "id": "uhlek-ganglion", "kind": "Beacon", "lat": -20, "lon": 60, "ref": "uhlek-mind" } ] } ] },
+    { "name": "Crystal Cone system", "x": 20, "y": 198, "class": "M", "planetCount": 3, "territory": "uhlek", "evidence": "documented",
+      "planets": [ { "orbit": 1, "type": "Frozen", "gravity": 0.7, "mass": 2,
+        "sites": [ { "id": "cone", "kind": "Artifact", "lat": -29, "lon": -55, "ref": "crystal-cone" } ] } ] },
+    { "name": "Tesseract system", "x": 18, "y": 50, "class": "K", "planetCount": 5, "territory": "uhlek", "evidence": "documented",
+      "planets": [ { "orbit": 5, "type": "Rock", "atmosphere": "Thin", "gravity": 1.1, "mass": 3,
+        "sites": [ { "id": "tesseract", "kind": "Artifact", "lat": 15, "lon": -44, "ref": "tesseract" } ] } ] },
+
+    { "name": "Phlegmak ruins", "x": 238, "y": 189, "class": "A", "planetCount": 4, "evidence": "documented", "flareDay": -400,
+      "planets": [ { "orbit": 3, "type": "Rock", "atmosphere": "VeryThin", "gravity": 0.9, "mass": 2,
+        "sites": [ { "id": "egg-1", "kind": "Artifact", "lat": 52, "lon": 16, "ref": "black-egg" } ] } ] },
+    { "name": "Forbidden ruins", "x": 143, "y": 115, "class": "F", "planetCount": 2, "evidence": "documented (Velox dialogue; Genesis guide places an egg here)",
+      "planets": [ { "orbit": 1, "type": "Desert", "atmosphere": "Thin", "gravity": 0.8, "mass": 2,
+        "sites": [ { "id": "egg-2", "kind": "Artifact", "lat": 28, "lon": 4, "ref": "black-egg" } ] } ] },
+    { "name": "Handle of Axe", "x": 234, "y": 20, "class": "F", "planetCount": 3, "evidence": "documented (Velox dialogue: Phlegmak last base)", "flareDay": -300,
+      "planets": [ { "orbit": 2, "type": "Rock", "atmosphere": "Thin", "gravity": 1.0, "mass": 3,
+        "sites": [ { "id": "egg-3", "kind": "Artifact", "lat": -35, "lon": 99, "ref": "black-egg" } ] } ] },
+
+    { "name": "Koann", "x": 112, "y": 200, "class": "G", "planetCount": 4, "evidence": "documented",
+      "planets": [ { "orbit": 3, "name": "Koann-3", "type": "Rock", "atmosphere": "Thin", "gravity": 0.9, "mass": 2,
+        "sites": [ { "id": "red-cylinder", "kind": "Artifact", "lat": 59, "lon": -64, "ref": "red-cylinder" } ] } ] },
+    { "name": "Gazurtoid nebula world", "x": 68, "y": 66, "class": "B", "planetCount": 2, "territory": "gazurtoid", "evidence": "documented",
+      "planets": [ { "orbit": 1, "type": "Ocean", "atmosphere": "Thick", "hydrosphere": "Water", "gravity": 1.2, "mass": 3, "bioDensity": "Moderate",
+        "sites": [ { "id": "shimmering-ball", "kind": "Artifact", "lat": 12, "lon": 32, "ref": "shimmering-ball" } ] } ] },
+    { "name": "New Scotland", "x": 81, "y": 98, "class": "G", "planetCount": 3, "evidence": "documented (DOS dialogue; Genesis guide disagrees on the Rod Device)",
+      "planets": [ { "orbit": 1, "name": "New Scotland", "type": "Rock", "atmosphere": "Moderate", "gravity": 1.0, "mass": 3,
+        "sites": [
+          { "id": "rod-device", "kind": "Artifact", "lat": -44, "lon": -137, "ref": "rod-device" },
+          { "id": "focusing-stone", "kind": "Artifact", "lat": 20, "lon": 40, "ref": "focusing-stone" } ] } ] },
+    { "name": "Colony control", "x": 118, "y": 146, "class": "K", "planetCount": 4, "evidence": "documented (Genesis guide only)",
+      "planets": [ { "orbit": 4, "type": "Rock", "atmosphere": "Thin", "gravity": 0.9, "mass": 2,
+        "sites": [ { "id": "dodecahedron", "kind": "Artifact", "lat": -16, "lon": -20, "ref": "dodecahedron" } ] } ] },
+    { "name": "Heaven", "x": 145, "y": 100, "class": "G", "planetCount": 5, "territory": "mechan", "evidence": "reconstructed ('20 sectors coreward of Arth')",
+      "planets": [ { "orbit": 4, "name": "Heaven", "type": "Jungle", "atmosphere": "Moderate", "atmosphereComposition": "Nitrogen, Oxygen", "hydrosphere": "Water",
+        "temperature": "Temperate", "gravity": 1.0, "mass": 3, "bioDensity": "Moderate",
+        "sites": [ { "id": "noah9-wreck", "kind": "Message", "lat": 3, "lon": 3, "ref": "msg-noah9-log" } ] } ] },
+    { "name": "Lasthope derelict", "x": 175, "y": 94, "class": "K", "planetCount": 3, "evidence": "documented",
+      "planets": [ { "orbit": 2, "type": "Rock", "atmosphere": "Thin", "gravity": 0.8, "mass": 2,
+        "sites": [ { "id": "lasthope", "kind": "Message", "lat": 22, "lon": -97, "ref": "msg-lasthope" } ] } ] },
+    { "name": "Akteron", "x": 168, "y": 128, "class": "F", "planetCount": 6, "evidence": "reconstructed (Four Seedlings constellation; position unknown)",
+      "planets": [ { "orbit": 6, "name": "Akteron 6", "type": "Rock", "atmosphere": "Thin", "gravity": 1.0, "mass": 3,
+        "sites": [ { "id": "institute", "kind": "Message", "lat": -75, "lon": 66, "ref": "msg-institute-records" } ] } ] }
+  ],
+
+  "territories": [
+    { "raceId": "elowan", "x": 138, "y": 48, "radius": 22 },
+    { "raceId": "thrynn", "x": 112, "y": 40, "radius": 20 },
+    { "raceId": "velox", "x": 138, "y": 172, "radius": 24 },
+    { "raceId": "spemin", "x": 82, "y": 148, "radius": 22 },
+    { "raceId": "uhlek", "x": 32, "y": 60, "radius": 34 },
+    { "raceId": "uhlek", "x": 28, "y": 180, "radius": 30 },
+    { "raceId": "gazurtoid", "x": 72, "y": 70, "radius": 20 },
+    { "raceId": "mechan", "x": 145, "y": 100, "radius": 6 }
+  ],
+
+  "fluxes": [
+    { "x1": 128, "y1": 105, "x2": 146, "y2": 112 },
+    { "x1": 126, "y1": 87,  "x2": 173, "y2": 88 },
+    { "x1": 148, "y1": 166, "x2": 170, "y2": 93 },
+    { "x1": 104, "y1": 82,  "x2": 118, "y2": 107 },
+    { "x1": 98,  "y1": 79,  "x2": 70,  "y2": 61 },
+    { "x1": 106, "y1": 139, "x2": 64,  "y2": 186 },
+    { "x1": 64,  "y1": 190, "x2": 35,  "y2": 186 },
+    { "x1": 135, "y1": 84,  "x2": 44,  "y2": 64 }
+  ],
+
+  "nebulae": [
+    { "x": 68, "y": 66, "radius": 9 }, { "x": 56, "y": 144, "radius": 7 }, { "x": 192, "y": 152, "radius": 5 },
+    { "x": 100, "y": 20, "radius": 8 }, { "x": 160, "y": 30, "radius": 10 }, { "x": 200, "y": 60, "radius": 12 },
+    { "x": 230, "y": 120, "radius": 9 }, { "x": 210, "y": 200, "radius": 11 }, { "x": 170, "y": 205, "radius": 7 },
+    { "x": 90, "y": 190, "radius": 8 }, { "x": 30, "y": 120, "radius": 10 }, { "x": 15, "y": 20, "radius": 7 },
+    { "x": 105, "y": 120, "radius": 5 }, { "x": 155, "y": 140, "radius": 6 }, { "x": 185, "y": 110, "radius": 6 },
+    { "x": 60, "y": 100, "radius": 6 }, { "x": 120, "y": 70, "radius": 4 }, { "x": 245, "y": 70, "radius": 6 }
+  ]
+}

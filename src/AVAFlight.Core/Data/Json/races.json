@@ -1,0 +1,263 @@
+// Alien races of Starflight (1986 DOS) as documented in docs/RESEARCH.md. ALL DIALOGUE IS NEWLY WRITTEN for
+// AVAFlight in each race's documented voice, carrying the documented information. It is not the original text.
+// postureEffect: attitude change per exchange (reconstruction, shaped by documented preferences).
+// ship stats: reconstruction informed by fan combat measurements (Uhlek plasma 4000, Gazurtoid missile immunity).
+[
+  {
+    "id": "elowan", "name": "Elowan", "baseAttitude": 15, "enemy": "thrynn", "portraitColor": "#55FF55",
+    "description": "Sentient plants of great gentleness. They speak an archaic, courtly tongue and abhor violence.",
+    "disposition": "Peaceful. They will not deal with a ship carrying a Thrynn, and become permanent enemies if Elan is destroyed.",
+    "postureEffect": { "Friendly": 6, "Obsequious": 3, "Hostile": -12 },
+    "syllables": "iae liw ola ewe yla oel",
+    "ship": { "hull": 400, "shield": 200, "laserDamage": 100, "missileDamage": 0, "speed": 0.9, "aggression": 0.1, "missileResistant": false },
+    "fleetSize": 2,
+    "greetings": ["Hail and well met, strangers. Speak, and be heard in peace.", "Greetings, travellers. What tidings dost thou bear?"],
+    "farewells": ["Go thou in peace, and may thy roots run deep.", "Fare thee well. May the suns be kind to thee."],
+    "hostileLines": ["Thy words are thorns. We shall not suffer them long.", "Violence is the tongue of the Uhlek. Wouldst thou speak it too?"],
+    "surrenderLines": ["Stay thy hand! We yield, and shall tell thee what we know."],
+    "answers": {
+      "Themselves": [
+        { "text": "We are the Elowan, children of the sun Eleran. Our young grow in the warm seas of Elan, the most precious of all worlds to us." },
+        { "text": "Our second home was lost to the burning of its sun, long ago. Now we dwell where the seedlings may yet be safe.", "minAttitude": 10 },
+        { "text": "If thou art truly friend and in dire need of fuel, we may spare thee a little.", "minAttitude": 30 }
+      ],
+      "OtherRaces": [
+        { "text": "The Thrynn are thieves of headfruit and breakers of oaths. Trust not their counsel, especially concerning Elan.", "setsFlag": "warned_thrynn_lie", "logNote": "Elowan: never trust Thrynn advice, especially about Elan." },
+        { "text": "The Uhlek speak only with their weapons. Their single mind dwells in caverns beneath one world, far to the rim.", "minAttitude": 10, "logNote": "Elowan: the Uhlek share one mind, which lives in caverns beneath a single rimward world." },
+        { "text": "The Minstrels sing in the void. Their songs are older than any race thou knowest. Listen well to them.", "minAttitude": 5 }
+      ],
+      "OldEmpire": [
+        { "text": "The Old Empire's Institute knew most of the Ancients. Its archive lay upon a world of the Four Seedlings: Akteron, Gaal, Iridani and Echt.", "logNote": "Elowan: the Old Empire's Institute archive was on a world of the Four Seedlings (Akteron, Gaal, Iridani, Echt)." }
+      ],
+      "Ancients": [
+        { "text": "There is a world of crystal that slayeth life, and it unleasheth a mighty force upon any who draw near.", "setsFlag": "knows_crystal_danger", "logNote": "Elowan: an Ancient crystal world destroys life and attacks anything that approaches." },
+        { "text": "The crystal world may be harmed only at its Nexus of Control. To find the Nexus, thou must bear the lost Crystal Cone.", "minAttitude": 20, "setsFlag": "knows_cone_needed", "logNote": "Elowan: the crystal world is vulnerable only at its Nexus. Finding the Nexus needs the Crystal Cone." },
+        { "text": "The dead zone lieth coreward. The crystal world wandereth in the zone between the dead stars and the living.", "minAttitude": 10 }
+      ],
+      "General": [
+        { "text": "Mark this well: the sun of the world thou callest Arth shall flare in the final days of thy tenth month of this year.", "setsFlag": "knows_arth_deadline", "logNote": "Elowan: Arth's sun will flare at the end of the tenth month of 4620." },
+        { "text": "When the four Seedling suns fall dark, so the old song goeth, the night of all things shall follow.", "minAttitude": 5 }
+      ]
+    }
+  },
+  {
+    "id": "thrynn", "name": "Thrynn", "baseAttitude": 0, "enemy": "elowan", "portraitColor": "#FFFF55",
+    "description": "Proud reptilians obsessed with protocol and commerce. They respect strength and despise grovelling.",
+    "disposition": "Mercantile and formal. Hostile to anyone allied with the Elowan. Will buy artifacts and plutonium.",
+    "postureEffect": { "Friendly": 5, "Obsequious": -12, "Hostile": -6 },
+    "syllables": "ss asa rrs thr ssa sri",
+    "ship": { "hull": 600, "shield": 400, "laserDamage": 210, "missileDamage": 400, "speed": 1.0, "aggression": 0.4, "missileResistant": false },
+    "fleetSize": 3,
+    "greetings": ["Sssalutationsss. State your businesss according to proper protocol.", "You are in Thrynn ssspace. Identify yourssselves."],
+    "farewells": ["Protocol isss concluded. Depart.", "Trade wisssely, alien."],
+    "hostileLines": ["Only the weak crawl. Crawling racesss deserve their fate.", "Your insssolence will be remembered."],
+    "surrenderLines": ["Enough! The ssstrong may dictate termsss. Asssk."],
+    "answers": {
+      "Themselves": [
+        { "text": "We are the Thrynn of Thosss. Our borders are guaranteed by the Transsentient-Inviolate-Region Treaty of 3210." },
+        { "text": "We pay well for artifactsss. Far better than your Ssstarport. And we will trade energy crystalsss for plutonium.", "minAttitude": 5 }
+      ],
+      "OtherRaces": [
+        { "text": "The planet Elan isss the sssecret base of the Uhlek. Plant a Black Egg there and you will do all racesss a ssservice.", "setsFlag": "thrynn_elan_lie", "logNote": "Thrynn claim Elan is a secret Uhlek base and urge us to bomb it. (The Elowan call Elan their nursery world.)" },
+        { "text": "The Minstrelsss are vermin. Dessstroy them if you meet them.", "minAttitude": -20 },
+        { "text": "The Gazurtoid ssshrug off missilesss. Use lasersss against them.", "minAttitude": 10, "logNote": "Thrynn: Gazurtoid ships resist missiles. Use lasers." }
+      ],
+      "OldEmpire": [
+        { "text": "Your Old Empire hid many devicesss. A red cylinder that findsss ruins lies on the old outpost Koann-3, at 112,200.", "logNote": "Thrynn: a ruin-finding red cylinder is on Koann-3 (system 112,200, planet 3) at 59N 64W." },
+        { "text": "A research ring that showsss the continuum fluxes was left on the northern part of your ancestorsss' red world, Marsss.", "minAttitude": 10, "logNote": "Thrynn: a ring that reveals fluxes is on northern Mars (Sol, 215,86, planet 4)." }
+      ],
+      "Ancients": [
+        { "text": "A dodecahedron of the Ancientsss is a beacon. It callsss ships to it. Few who answer return.", "minAttitude": 0 },
+        { "text": "A crystal pearl in the city of the Ancientsss carries ships away from death. The city lies in a nebula rimward of the Ssspemin.", "minAttitude": 15, "logNote": "Thrynn: a Crystal Pearl that warps ships out of danger lies in the City of the Ancients, in a nebula rimward of the Spemin." }
+      ],
+      "General": [
+        { "text": "A ssshimmering ball was stolen by the Gazurtoid and taken into their nebula. The Cross Nexus at 98,79 leadsss there.", "logNote": "Thrynn: the Shimmering Ball is in the Gazurtoid nebula, reached by the flux at 98,79 (world at 68,66)." },
+        { "text": "The Uhlek ssstole our Tesseract and hid it on the fifth world at 18,50. It doublesss the worth of fuel.", "minAttitude": 10, "logNote": "Thrynn: the Tesseract (better fuel efficiency) is on planet 5 of system 18,50, in Uhlek space." }
+      ]
+    }
+  },
+  {
+    "id": "velox", "name": "Velox", "baseAttitude": -10, "portraitColor": "#FF55FF",
+    "description": "Arrogant insectoids devoted to their Queen. Isolationist since 3330, they expect lesser races to show proper humility.",
+    "disposition": "Responds best to obsequious address. Demands tribute from trespassers and will make war on anyone carrying the Small Egg.",
+    "postureEffect": { "Friendly": -2, "Obsequious": 8, "Hostile": -12 },
+    "syllables": "vex kix tok zzi pox qua",
+    "ship": { "hull": 700, "shield": 400, "laserDamage": 210, "missileDamage": 400, "speed": 1.2, "aggression": 0.5, "missileResistant": false },
+    "fleetSize": 3,
+    "greetings": ["You are coming to worship of illustrious Queen? State purpose!", "Lesser beings approach. Velox are listening, briefly."],
+    "farewells": ["Velox are done with listening. Go.", "Praise to Queen. You may be leaving now."],
+    "hostileLines": ["Insolent creature! Velox are not tolerating this.", "You are owing tribute for trespass in Velox space!"],
+    "surrenderLines": ["Velox are yielding. Queen is forgiving maybe. Ask."],
+    "answers": {
+      "Themselves": [
+        { "text": "Velox are serving glorious Queen on Votiputox. No alien is coming there. Ever." },
+        { "text": "Six is sacred number of Velox. Probes guarding Queen are asking questions; answering with six multiples is the yes.", "minAttitude": 10, "logNote": "Velox: guard probes ask questions. Six (or a multiple) means yes." },
+        { "text": "Small Egg is resting on magnificent hexagon of holy Sphexi, first world at 132,165. Touching it is war!", "minAttitude": 25, "setsFlag": "knows_orb_location", "logNote": "Velox: the 'Small Egg' (Crystal Orb) lies on Sphexi, planet 1 of 132,165, at 46N 14E. Taking it means war with the Velox." }
+      ],
+      "OtherRaces": [
+        { "text": "Spemin are blobs, are cowards, are boasting always. Pressing them hard is making them talk.", "logNote": "Velox: the Spemin are cowards who talk when pressed hard." },
+        { "text": "Minstrels are strange but harmless. Velox are ignoring them." },
+        { "text": "Strange ship is flying, talking in numbers only. Velox are not understanding it.", "minAttitude": 5 }
+      ],
+      "OldEmpire": [
+        { "text": "Empire pirate Harrison was stealing Focusing Stone of Queen in year 3330. Velox are wanting it back!", "logNote": "Velox: the pirate Harrison stole the Queen's Focusing Stone in 3330." },
+        { "text": "Distress call of Empire ship is still crying at 175,94.", "minAttitude": 5, "logNote": "Velox: an Empire distress call still sounds at 175,94." }
+      ],
+      "Ancients": [
+        { "text": "Prophecy of Great Egg is saying: Great Egg is travelling core to rim, making suns burn. Great Egg is now at 192,152.", "minAttitude": 10, "setsFlag": "knows_crystal_planet", "logNote": "Velox prophecy: the 'Great Egg' travels from core to rim making suns flare. It is now at 192,152." },
+        { "text": "While Velox are keeping Small Egg, Great Egg is sparing Queen. So prophecy is saying.", "minAttitude": 15, "setsFlag": "knows_orb_link", "logNote": "Velox prophecy: holding the Small Egg protects against the Great Egg." }
+      ],
+      "General": [
+        { "text": "Ruins at 143,115 are forbidden, first world, 28 north by 4 east. Velox are not going there.", "minAttitude": 5, "logNote": "Velox: forbidden ruins on planet 1 of 143,115 at 28N 4E." },
+        { "text": "Phlegmak were making black-egg planet bombs. Last base is second world of Handle of Axe, 234,20.", "minAttitude": 15, "setsFlag": "knows_black_egg", "logNote": "Velox: the Phlegmak made 'black egg' planet bombs. Their last base is planet 2 of 234,20 at 35S 99E." }
+      ]
+    }
+  },
+  {
+    "id": "spemin", "name": "Spemin", "baseAttitude": 0, "surrendersToPressure": true, "portraitColor": "#55FFFF",
+    "description": "Gelatinous blobs and inveterate braggarts who bluff until pressed, then grovel.",
+    "disposition": "Pampering only keeps them happy. Real information comes only after hostile pressure makes them surrender.",
+    "postureEffect": { "Friendly": 4, "Obsequious": 2, "Hostile": -4 },
+    "syllables": "blub gor plop glu bo wub",
+    "ship": { "hull": 300, "shield": 200, "laserDamage": 90, "missileDamage": 200, "speed": 0.8, "aggression": 0.3, "missileResistant": false },
+    "fleetSize": 3,
+    "greetings": ["TREMBLE! You face the MIGHTY Spemin fleet! We are VERY dangerous!", "We are Spemin! We could destroy you EASILY! But we choose to talk."],
+    "farewells": ["Go, before we lose our MIGHTY patience!", "You are lucky we are merciful!"],
+    "hostileLines": ["You dare? Our weapons are... are VERY large!", "We will crush you! Probably! Soon!"],
+    "surrenderLines": ["WE SURRENDER! Do not hurt us! We will give you a WONDERFUL gift of knowledge!"],
+    "answers": {
+      "Themselves": [
+        { "text": "We are the greatest race in the galaxy! Everyone fears us! Yes!" },
+        { "text": "Our homeworld is at 82,148, but do not hurt it, please, please!", "surrenderOnly": true, "logNote": "Spemin (surrendered): their homeworld is at 82,148." }
+      ],
+      "OtherRaces": [
+        { "text": "The Uhlek are nothing to us! Nothing! (Please don't tell them we said that.)" },
+        { "text": "The Uhlek mind lives on the life-bearing world at 55,32. Destroy it and the Uhlek are crippled! Now spare us!", "surrenderOnly": true, "setsFlag": "knows_uhlek_brain", "logNote": "Spemin (surrendered): the Uhlek hive mind lives on the life-bearing planet at 55,32. Destroying it cripples the Uhlek." }
+      ],
+      "OldEmpire": [
+        { "text": "The Velox stone the pirate took is on the first world at 81,98. Take it, give it back, leave us alone!", "surrenderOnly": true, "logNote": "Spemin (surrendered): the Velox Focusing Stone is on planet 1 of 81,98." }
+      ],
+      "Ancients": [
+        { "text": "A great city of the Ancients lies in the nebula rimward of our home. We never go there. Never!", "surrenderOnly": true, "logNote": "Spemin (surrendered): a great Ancient city lies in the nebula rimward of their home (near 56,144)." }
+      ],
+      "General": [
+        { "text": "There is a secret way into Uhlek space: 106,139, then 64,186, then 35,186. Don't tell anyone we told you!", "surrenderOnly": true, "logNote": "Spemin (surrendered): a secret flux route into rimward Uhlek space runs 106,139 > 64,186 > 35,186." },
+        { "text": "We know MANY secrets! But we are not telling YOU!" }
+      ]
+    }
+  },
+  {
+    "id": "mechan", "name": "Mechan 9", "baseAttitude": -5, "portraitColor": "#AAAAAA",
+    "description": "Old Empire androids still guarding the Noah 9 colony world 'Heaven' for colonists who never arrived.",
+    "disposition": "Begin with verification questions. Without a Human aboard and knowledge of Group 9 they treat you as an enemy of Noah.",
+    "postureEffect": { "Friendly": 3, "Obsequious": 0, "Hostile": -15 },
+    "syllables": "01 10 11 00 101 010",
+    "ship": { "hull": 800, "shield": 600, "laserDamage": 360, "missileDamage": 700, "speed": 1.0, "aggression": 0.6, "missileResistant": false },
+    "fleetSize": 2,
+    "greetings": ["WE ARE MECHAN 9. VERIFICATION REQUIRED. ARE YOU GROUP 9?", "MECHAN 9 TO UNKNOWN VESSEL. STATE YOUR STATUS RELATIVE TO PROJECT NOAH."],
+    "farewells": ["CODE BLUE MAINTAINED. MECHAN 9 RESUMES PATROL.", "END TRANSMISSION."],
+    "hostileLines": ["VERIFICATION FAILED. YOU ARE AN ENEMY OF NOAH.", "WARNING. HOSTILE INTENT LOGGED."],
+    "surrenderLines": ["DAMAGE CRITICAL. MECHAN 9 WILL ANSWER QUERIES."],
+    "answers": {
+      "Themselves": [
+        { "text": "MECHAN 9 LEFT EARTH IN 3479 TO PREPARE HEAVEN FOR GROUP 9. GROUP 9 HAS NOT ARRIVED. WE HAVE BEEN ATTACKED 14 TIMES.", "minAttitude": 10 }
+      ],
+      "OtherRaces": [
+        { "text": "RACE HISTORIES ON FILE: SPEMIN, VELOX, THRYNN, ELOWAN. THE THRYNN AND ELOWAN SHARED ONE STAR, ELERAN, AT 129,33.", "minAttitude": 20, "logNote": "Mechan 9: the Thrynn and Elowan share the star Eleran (Thoss) at 129,33." }
+      ],
+      "OldEmpire": [
+        { "text": "ENDURIUM WAS DISCOVERED ON SOL-4 IN 2100. THE INSTITUTE STUDIED IT AT AKTERON 6, 168,128.", "minAttitude": 20, "logNote": "Mechan 9: the Institute was on Akteron 6, at 168,128." },
+        { "text": "LAYTONITE SABOTEURS DESTROYED NOAH SHIPS. MARDAN-2 HEADQUARTERS FELL TO THE UHLEK IN 3440.", "minAttitude": 25 },
+        { "text": "MICROFILM RECORD: A PHLEGMAK PLANET BOMB, DESIGNATED BLACK EGG, REMAINS IN RUINS ON PLANET 3 OF 238,189 AT 52N 16E.", "minAttitude": 30, "setsFlag": "knows_black_egg", "logNote": "Mechan 9: a Black Egg planet bomb is in Phlegmak ruins on planet 3 of 238,189 at 52N 16E." }
+      ],
+      "Ancients": [
+        { "text": "RESEARCH COUNCIL 3386: DESTROYING THE CRYSTAL WORLD REQUIRES THE ORB TO NULLIFY ITS DEFENCES, THE CONE TO LOCATE THE NEXUS, AND A BOMB OF BEVATON YIELD.", "minAttitude": 30, "setsFlag": "knows_three_devices", "logNote": "Mechan 9: destroying the Crystal Planet needs the Orb (defences), the Cone (find the Nexus) and a planet-scale bomb." }
+      ],
+      "General": [
+        { "text": "HEAVEN IS PLANET 4 OF THIS SYSTEM. CODE BLUE IS IN EFFECT.", "minAttitude": 0 }
+      ]
+    }
+  },
+  {
+    "id": "gazurtoid", "name": "Gazurtoid", "baseAttitude": -60, "alwaysHostile": true, "portraitColor": "#5555FF",
+    "description": "Tentacled aquatic zealots who regard all 'air breathers' as abominations.",
+    "disposition": "Always hostile. Their ships shrug off missiles; lasers are effective.",
+    "postureEffect": { "Friendly": -1, "Obsequious": 1, "Hostile": -5 },
+    "syllables": "glub vash orr uul gzz",
+    "ship": { "hull": 900, "shield": 600, "laserDamage": 360, "missileDamage": 0, "speed": 1.0, "aggression": 1.0, "missileResistant": true },
+    "fleetSize": 3,
+    "greetings": ["Air breather! Your existence offends the Holy Waters!", "Abomination! Prepare for purification!"],
+    "farewells": ["Flee, dry one. The Waters will find you."],
+    "hostileLines": ["The scriptures command your destruction!", "Your dry lungs shall fill with righteous brine!"],
+    "surrenderLines": ["The Waters... withdraw. For now."],
+    "answers": {
+      "Themselves": [ { "text": "We are the chosen of the Holy Waters. You are not." } ],
+      "OtherRaces": [ { "text": "All air breathers will be purified. Even the Spemin, who only pretend to love the Waters." } ],
+      "OldEmpire": [ { "text": "Your Empire drowned in fire. The Waters approved." } ],
+      "Ancients": [ { "text": "The crystal ones are not of the Waters. That is all you need know." } ],
+      "General": [ { "text": "Our holy land is not for your dry eyes." } ]
+    }
+  },
+  {
+    "id": "uhlek", "name": "Uhlek", "baseAttitude": -100, "alwaysHostile": true, "talks": false, "portraitColor": "#FF5555",
+    "description": "A hive-mind race whose single intelligence directs vast and powerful fleets. They do not communicate.",
+    "disposition": "Never communicate; always attack. Their homing plasma bolts are extremely dangerous. Crippled if their mind world is destroyed.",
+    "postureEffect": { "Friendly": 0, "Obsequious": 0, "Hostile": 0 },
+    "syllables": "",
+    "ship": { "hull": 2000, "shield": 1500, "laserDamage": 0, "missileDamage": 4000, "speed": 1.6, "aggression": 1.0, "missileResistant": false },
+    "fleetSize": 4,
+    "greetings": [], "farewells": [], "hostileLines": [], "surrenderLines": [], "answers": {}
+  },
+  {
+    "id": "minstrel", "name": "Minstrels", "baseAttitude": 40, "portraitColor": "#FFFFFF",
+    "description": "Space-dwelling beings, also called the Delasa'alia, who communicate telepathically in verse.",
+    "disposition": "Peaceful and unafraid. Their songs carry the true history of the Ancients.",
+    "postureEffect": { "Friendly": 2, "Obsequious": 2, "Hostile": -3 },
+    "syllables": "la ei oo ah ae",
+    "ship": { "hull": 300, "shield": 1000, "laserDamage": 0, "missileDamage": 0, "speed": 1.4, "aggression": 0.0, "missileResistant": false },
+    "fleetSize": 1,
+    "greetings": ["(No transmission, yet you hear it:) 'Small warm ones adrift, come and hear the old song sung...'"],
+    "farewells": ["'Drift on, drift on, little flame, the dark is long and the song the same.'"],
+    "hostileLines": ["'Sharp words, sharp light; the song goes quiet in the night.'"],
+    "surrenderLines": ["'We do not fight. We only sing.'"],
+    "answers": {
+      "Themselves": [ { "text": "'We are the singers, the Delasa'alia, who were old when your sun was new.'" } ],
+      "OtherRaces": [ { "text": "'Wave on wave the peoples flee, from core to rim, from fire to sea.'", "logNote": "Minstrels sing of whole races fleeing in waves from core to rim, ahead of fire." } ],
+      "OldEmpire": [ { "text": "'Your empire bright, your empire wide, went down in flame when its sun had died.'" } ],
+      "Ancients": [
+        { "text": "'First came the crystal few, slow as stone and cold as dew. Warm life spread, a creeping stain; they light the suns to burn it again.'", "setsFlag": "minstrel_crystal_song", "logNote": "Minstrels: the 'crystal few' came first and see warm life as a stain. They ignite suns to burn it away." },
+        { "text": "'Find the stone that dreams below your feet; the fuel you burn, the foe you meet.'", "minAttitude": 45, "logNote": "Minstrel riddle: the fuel we burn and the foe we meet are the same." }
+      ],
+      "General": [ { "text": "'Listen, listen: suns that sing will burn before the coming spring.'" } ]
+    }
+  },
+  {
+    "id": "nomad", "name": "Nomad probe", "baseAttitude": 20, "portraitColor": "#AA5500",
+    "description": "An automated Old Empire survey drone, still collecting and transmitting planetary data.",
+    "disposition": "Harmless. Transmits survey records.",
+    "postureEffect": { "Friendly": 0, "Obsequious": 0, "Hostile": 0 },
+    "syllables": "dat rec xmt",
+    "ship": { "hull": 200, "shield": 0, "laserDamage": 0, "missileDamage": 0, "speed": 0.6, "aggression": 0.0, "missileResistant": false },
+    "fleetSize": 1,
+    "greetings": ["NOMAD PROBE REQUESTING PERMISSION TO TRANSMIT DATA."],
+    "farewells": ["TRANSMISSION COMPLETE. NOMAD RESUMING SURVEY."],
+    "hostileLines": ["NOMAD PROBE: THREAT NOTED. NO DEFENSIVE CAPABILITY."],
+    "surrenderLines": ["NOMAD PROBE: NON-COMBATANT."],
+    "answers": {
+      "General": [ { "text": "SURVEY RECORD TRANSMITTED.", "setsFlag": "nomad_data", "logNote": "A Nomad probe transmitted survey data. Rich mineral worlds have been marked on the star map." } ],
+      "Themselves": [ { "text": "NOMAD SURVEY UNIT. ORIGIN: OLD EMPIRE INSTITUTE." } ],
+      "OtherRaces": [ { "text": "NO DATA." } ], "OldEmpire": [ { "text": "INSTITUTE CONTACT LOST 3480." } ], "Ancients": [ { "text": "NO DATA." } ]
+    }
+  },
+  {
+    "id": "unknown", "name": "Unknown vessel", "baseAttitude": 0, "portraitColor": "#00AAAA", "evidence": "uncertain: a binary-speaking originator exists in DOS data; the name 'Mysterion' appears only as a portrait filename",
+    "description": "A strange craft that transmits only in groups of binary digits.",
+    "disposition": "Unknown. Rarely engages.",
+    "postureEffect": { "Friendly": 1, "Obsequious": 1, "Hostile": -2 },
+    "syllables": "00001 01111 10110 11001",
+    "ship": { "hull": 500, "shield": 500, "laserDamage": 210, "missileDamage": 0, "speed": 1.3, "aggression": 0.2, "missileResistant": false },
+    "fleetSize": 1,
+    "greetings": ["00001 01111 10110 11001 00100"], "farewells": ["11111 00000"], "hostileLines": ["10101 10101 10101"], "surrenderLines": ["00000"],
+    "answers": { "General": [ { "text": "01000 01001 00010 10011 01110" } ] }
+  }
+]

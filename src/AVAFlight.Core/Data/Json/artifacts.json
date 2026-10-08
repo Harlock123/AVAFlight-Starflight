@@ -1,0 +1,30 @@
+// Artifacts. Names/functions documented in DOS game text unless "evidence" says otherwise.
+// Values (MU paid by Starport after analysis) are reconstruction assumptions. Descriptions are newly written.
+[
+  { "id": "crystal-orb", "name": "Crystal Orb", "value": 20000, "effect": "orb_protection", "plotCritical": true,
+    "description": "A glowing crystalline sphere that the Velox revere as the 'Small Egg'. It hums in sympathy with Ancient technology and appears to cancel the Crystal Planet's defences." },
+  { "id": "crystal-cone", "name": "Crystal Cone", "value": 20000, "effect": "nexus_locator", "plotCritical": true,
+    "description": "A tapering crystal lattice. When held in orbit of an Ancient construct it points unerringly at its control nexus." },
+  { "id": "black-egg", "name": "Black Egg", "value": 15000, "effect": "planet_bomb", "plotCritical": true,
+    "description": "A dense black ovoid of Phlegmak make, with a planet-destroying yield. Planting one and departing quickly is strongly advised." },
+  { "id": "crystal-pearl", "name": "Crystal Pearl", "value": 12000, "effect": "emergency_warp",
+    "description": "A pulsing pearl that hurls the ship clear of danger when its hull is close to failing." },
+  { "id": "tesseract", "name": "Tesseract", "value": 10000, "effect": "fuel_efficiency",
+    "description": "An energy enhancer once stolen from the Thrynn. Once analysed and installed, it halves hyperspace fuel consumption." },
+  { "id": "red-cylinder", "name": "Red Cylinder", "value": 6000, "effect": "ruin_locator",
+    "description": "A red cylindrical device from the outpost on Koann-3. It reveals ruins on planetary scans." },
+  { "id": "dodecahedron", "name": "Dodecahedron", "value": 5000, "effect": "attracts_ships", "evidence": "documented (location from Genesis guide)",
+    "description": "An Ancient distress beacon. While it is aboard, alien ships seem to find you more often." },
+  { "id": "shimmering-ball", "name": "Shimmering Ball", "value": 9000, "effect": "cloak",
+    "description": "A shimmering sphere coveted by the Thrynn. Hostile ships have trouble tracking a vessel that carries it." },
+  { "id": "ring-device", "name": "Ring Device", "value": 8000, "effect": "flux_reveal",
+    "description": "An Institute research ring from northern Mars. It shows continuum fluxes on the star map whatever the navigator's skill." },
+  { "id": "rod-device", "name": "Rod Device", "value": 8000, "effect": "laser_deflect", "evidence": "documented (location disputed between DOS text and Genesis guide)",
+    "description": "A laser-deflection screen once owned by the pirate Harrison. It halves laser damage to the ship." },
+  { "id": "focusing-stone", "name": "Focusing Stone", "value": 7000, "effect": "velox_relic",
+    "description": "The Velox Queen's hive-mind relay, stolen by the pirate Harrison centuries ago. The Velox want it back." },
+  { "id": "whining-orb", "name": "Whining Orb", "value": 4000, "effect": "spemin_translator",
+    "description": "A Thrynn-built device that whines constantly and translates the Spemin language." },
+  { "id": "black-box", "name": "Black Box", "value": 3000, "effect": "none",
+    "description": "Sold by the Thrynn as a device to make a ship invulnerable. Whether it does anything at all is unknown." }
+]

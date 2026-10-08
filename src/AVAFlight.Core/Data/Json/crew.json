@@ -1,0 +1,24 @@
+// Crew races. Aptitude -> start/max: Excellent 50/250, Good 30/200, Average 10/150, Poor 0/100 (manual).
+// Durability / learning rate per race (manual). Android skills fixed and untrainable (manual + code).
+[
+  { "id": "human", "name": "Human", "durability": 6, "learnRate": 9, "evidence": "documented",
+    "description": "Descendants of the Noah 2 colonists of Arth. Quick learners and capable all-rounders, with a gift for science.",
+    "start": { "Science": 50, "Navigation": 30, "Engineering": 30, "Communication": 30, "Medicine": 30 },
+    "max":   { "Science": 250, "Navigation": 200, "Engineering": 200, "Communication": 200, "Medicine": 200 } },
+  { "id": "velox", "name": "Velox", "durability": 8, "learnRate": 6, "evidence": "documented",
+    "description": "Hardy insectoids. Superb pilots and engineers, but poor at talking and at healing.",
+    "start": { "Science": 30, "Navigation": 50, "Engineering": 50, "Communication": 0, "Medicine": 0 },
+    "max":   { "Science": 200, "Navigation": 250, "Engineering": 250, "Communication": 100, "Medicine": 100 } },
+  { "id": "thrynn", "name": "Thrynn", "durability": 6, "learnRate": 7, "evidence": "documented",
+    "description": "Formal, mercantile reptilians and gifted communicators. Elowan will not deal with a ship carrying a Thrynn.",
+    "start": { "Science": 30, "Navigation": 30, "Engineering": 30, "Communication": 50, "Medicine": 0 },
+    "max":   { "Science": 200, "Navigation": 200, "Engineering": 200, "Communication": 250, "Medicine": 100 } },
+  { "id": "elowan", "name": "Elowan", "durability": 2, "learnRate": 10, "evidence": "documented",
+    "description": "Gentle sentient plants. Fragile, the fastest learners, and excellent at communication and medicine. Thrynn will not deal with a ship carrying an Elowan.",
+    "start": { "Science": 10, "Navigation": 30, "Engineering": 10, "Communication": 50, "Medicine": 50 },
+    "max":   { "Science": 150, "Navigation": 200, "Engineering": 150, "Communication": 250, "Medicine": 250 } },
+  { "id": "android", "name": "Android", "durability": 10, "learnRate": 0, "evidence": "documented",
+    "description": "Durable DX-series androids. Their skills are fixed at manufacture and cannot be trained.",
+    "start": { "Science": 50, "Navigation": 150, "Engineering": 100, "Communication": 0, "Medicine": 20 },
+    "max":   { "Science": 50, "Navigation": 150, "Engineering": 100, "Communication": 0, "Medicine": 20 } }
+]

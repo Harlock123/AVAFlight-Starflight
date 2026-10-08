@@ -1,0 +1,14 @@
+// Starport Operations notices, by game day (day 0 = 01-01-4620). Dates from the starflt.com walkthrough
+// and the decompiled notice texts; wording NEWLY WRITTEN.
+[
+  { "id": "n-welcome", "day": 0, "text": "Welcome to Interstel, Captain. 12,000 M.U. have been deposited in your account. Outfit your ship, recruit and train a crew, then report for launch. Objectives: find minerals and lifeforms, recommend colony worlds, recover Ancient artifacts, and contact any alien races you meet. Avoid hyperspace near 135,84, where two ships were lost. Prospectors report minerals in the mountains of the innermost planet of this system, and ruins at 17N 162E on planet 2 of the neighbouring K-class system. There are reports of alien activity at 175,94." },
+  { "id": "n-sun-unstable", "day": 1, "text": "Interstel scientists report that Arth's sun has become unstable. Stellar-condition sensors are being fitted to all ships. The cause appears to be external to the star." },
+  { "id": "n-androids", "day": 2, "text": "A survey ship was destroyed by android vessels about 20 sectors directly coreward of Arth. Approach with caution." },
+  { "id": "n-flux-1", "day": 10, "text": "Navigation bulletin: continuum fluxes have been charted linking 128,105 with 146,112, and 104,82 with 118,107." },
+  { "id": "n-ship-lost", "day": 47, "text": "Interstel has lost contact with a survey vessel at 192,152. Its last transmission described a planet of pure crystal." },
+  { "id": "n-endurium-1500", "day": 49, "text": "Market notice: the Endurium price is now 1,500 M.U. per cubic metre." },
+  { "id": "n-flux-2", "day": 80, "text": "Navigation bulletin: further fluxes charted, linking 126,87 with 173,88, and 148,166 with 170,93." },
+  { "id": "n-endurium-2000", "day": 134, "text": "Market notice: the Endurium price is now 2,000 M.U. per cubic metre." },
+  { "id": "n-thrynn-artifacts", "day": 60, "text": "Interstel reminds all captains that artifacts must not be sold to the Thrynn. Bring them to the Trade Depot for analysis." },
+  { "id": "n-sun-worse", "day": 200, "text": "Arth's sun is deteriorating faster than predicted. All captains should report any findings about the cause immediately." }
+]

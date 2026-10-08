@@ -1,0 +1,11 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="AVAFlight.Avalonia.MainWindow"
+        Title="AVAFlight" Width="1280" Height="800" MinWidth="1024" MinHeight="640"
+        Background="Black">
+  <!-- Tiling window managers may ignore MinWidth/MinHeight; the LayoutTransformControl scales the
+       whole UI down uniformly when the window is smaller than the design minimum. -->
+  <LayoutTransformControl x:Name="Scaler">
+    <ContentControl x:Name="ScreenHost" />
+  </LayoutTransformControl>
+</Window>

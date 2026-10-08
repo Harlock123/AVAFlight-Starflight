@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <RootNamespace>AVAFlight.Core</RootNamespace>
+    <!-- UI-independent: no Avalonia or platform references allowed in this project. -->
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Json\*.json" LogicalName="AVAFlight.Data.%(Filename).json" />
+  </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="AVAFlight.Tests" />
+  </ItemGroup>
+</Project>

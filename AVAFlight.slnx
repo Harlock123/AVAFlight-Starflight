@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/AVAFlight.Avalonia/AVAFlight.Avalonia.csproj" />
+    <Project Path="src/AVAFlight.Core/AVAFlight.Core.csproj" />
+    <Project Path="src/AVAFlight.Infrastructure/AVAFlight.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/AVAFlight.Tests/AVAFlight.Tests.csproj" />
+  </Folder>
+</Solution>

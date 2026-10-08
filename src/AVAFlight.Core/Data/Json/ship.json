@@ -1,0 +1,45 @@
+// Ship component catalog. Prices: manual (class 1 & 5 endpoints) + decompiled CONFIG price table
+// (middle classes) -> "documented". Mass per derived SHIPGRPH formula: engine 50 t, armor 9*class^2 t,
+// shields/missile/laser 5 t each, pods 10 t each, hull 50 t. Strengths: fan measurements (starflt.com
+// ships/combat analysis) -> "fan-measured". Repair & fuel pricing -> "reconstructed".
+{
+  "startingCredits": 12000,
+  "cargoPodPrice": 500,
+  "cargoPodCapacity": 50,
+  "maxCargoPods": 16,
+  "hullMass": 50,
+  "podMass": 10,
+  "repairPricePerPoint": 4,
+  "fuelPricePerUnit": 1000,
+  "components": [
+    { "kind": "Engine", "class": 1, "price": 1000,   "mass": 50, "strength": 1, "evidence": "documented" },
+    { "kind": "Engine", "class": 2, "price": 8000,   "mass": 50, "strength": 2, "evidence": "documented" },
+    { "kind": "Engine", "class": 3, "price": 20000,  "mass": 50, "strength": 3, "evidence": "documented" },
+    { "kind": "Engine", "class": 4, "price": 40000,  "mass": 50, "strength": 4, "evidence": "documented" },
+    { "kind": "Engine", "class": 5, "price": 100000, "mass": 50, "strength": 5, "evidence": "documented" },
+
+    { "kind": "Shield", "class": 1, "price": 4000,   "mass": 5, "strength": 500,  "evidence": "documented price; fan-measured strength" },
+    { "kind": "Shield", "class": 2, "price": 12000,  "mass": 5, "strength": 1000, "evidence": "documented price; fan-measured strength" },
+    { "kind": "Shield", "class": 3, "price": 32000,  "mass": 5, "strength": 1500, "evidence": "documented price; fan-measured strength" },
+    { "kind": "Shield", "class": 4, "price": 70000,  "mass": 5, "strength": 2000, "evidence": "documented price; fan-measured strength" },
+    { "kind": "Shield", "class": 5, "price": 125000, "mass": 5, "strength": 2500, "evidence": "documented price; fan-measured strength" },
+
+    { "kind": "Armor", "class": 1, "price": 1500,  "mass": 9,   "strength": 250,  "evidence": "documented price; fan-measured strength" },
+    { "kind": "Armor", "class": 2, "price": 3100,  "mass": 36,  "strength": 500,  "evidence": "documented price; fan-measured strength" },
+    { "kind": "Armor", "class": 3, "price": 6200,  "mass": 81,  "strength": 750,  "evidence": "documented price; fan-measured strength" },
+    { "kind": "Armor", "class": 4, "price": 12500, "mass": 144, "strength": 1000, "evidence": "documented price; fan-measured strength" },
+    { "kind": "Armor", "class": 5, "price": 25000, "mass": 225, "strength": 1250, "evidence": "documented price; fan-measured strength" },
+
+    { "kind": "Missile", "class": 1, "price": 12000,  "mass": 5, "strength": 200,  "evidence": "documented price; fan-measured damage" },
+    { "kind": "Missile", "class": 2, "price": 28000,  "mass": 5, "strength": 400,  "evidence": "documented price; fan-measured damage" },
+    { "kind": "Missile", "class": 3, "price": 60000,  "mass": 5, "strength": 700,  "evidence": "documented price; fan-measured damage" },
+    { "kind": "Missile", "class": 4, "price": 120000, "mass": 5, "strength": 1000, "evidence": "documented price; fan-measured damage" },
+    { "kind": "Missile", "class": 5, "price": 200000, "mass": 5, "strength": 1500, "evidence": "documented price; fan-measured damage" },
+
+    { "kind": "Laser", "class": 1, "price": 8000,   "mass": 5, "strength": 90,  "evidence": "documented price; fan-measured damage" },
+    { "kind": "Laser", "class": 2, "price": 20000,  "mass": 5, "strength": 210, "evidence": "documented price; fan-measured damage" },
+    { "kind": "Laser", "class": 3, "price": 54000,  "mass": 5, "strength": 360, "evidence": "documented price; fan-measured damage" },
+    { "kind": "Laser", "class": 4, "price": 90000,  "mass": 5, "strength": 510, "evidence": "documented price; fan-measured damage" },
+    { "kind": "Laser", "class": 5, "price": 150000, "mass": 5, "strength": 660, "evidence": "documented price; fan-measured damage" }
+  ]
+}

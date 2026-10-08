@@ -1,0 +1,25 @@
+// Planet-surface messages and recordings. Text is NEWLY WRITTEN for AVAFlight, paraphrasing the content of
+// the originals as documented in docs/RESEARCH.md. It is not the original game text.
+[
+  { "id": "msg-first-wave-ruin", "title": "Weathered marker", "evidence": "documented content, new text",
+    "text": "Rows of glyphs cut into fused stone. The translator recovers fragments: '...the First Wave... we flee the burning suns... to the rim, ever to the rim...'",
+    "setsFlag": "lore_first_wave", "logNote": "Ruins near Arth tell of a 'First Wave' of races fleeing burning suns toward the rim." },
+  { "id": "msg-earth-flare-log", "title": "Final station log, Earth", "evidence": "documented content, new text",
+    "text": "AUTOMATED LOG, 3480. Solar output exceeds all projections. Surface temperature 150 C and rising. All remaining personnel ordered below ground. Earth is lost.",
+    "setsFlag": "lore_earth_flare", "logNote": "Earth was destroyed when Sol flared in 3480. Arth's own sun is now unstable." },
+  { "id": "msg-institute-station", "title": "Starflight research station", "evidence": "documented content, new text",
+    "text": "An underground Institute station. Records mention Project Noah, a set of colony ships sent to hide humanity from the flares, and a research ring kept at the polar station on Mars.",
+    "setsFlag": "lore_project_noah", "logNote": "The Institute's Project Noah sent colony ships away from the flares. A research ring was kept on Mars." },
+  { "id": "msg-institute-records", "title": "Institute archive, Akteron 6", "evidence": "documented content, new text",
+    "text": "The Institute studied the Ancients and the instability of the coreward stars. One report concludes that the flares are not natural, and that something is moving outward from the core, igniting suns that harbour life.",
+    "setsFlag": "lore_flares_artificial", "logNote": "Institute archives: the flares are artificial, caused by something moving out from the core." },
+  { "id": "msg-noah9-log", "title": "Wreck of a Noah colony ship", "evidence": "documented content, new text",
+    "text": "Log of a colony ship bound for the Noah 9 colony world called Heaven. Saboteurs of the Layton faction crippled the drive. The android guardians below await 'Group 9' and will not recognise anyone else.",
+    "setsFlag": "lore_noah9", "logNote": "Heaven was the Noah 9 colony world. Its Mechan guardians still wait for 'Group 9'." },
+  { "id": "msg-lasthope", "title": "Distress beacon: LASTHOPE", "evidence": "documented content, new text",
+    "text": "This is the Empire colony ship LASTHOPE, dated 3480. We are down and the crew is dying. If anyone hears this: the Ancients' world is the cause of the flares. The Velox know where it lies.",
+    "setsFlag": "lore_lasthope", "logNote": "The LASTHOPE beacon blames an Ancient world for the flares and says the Velox know its location." },
+  { "id": "msg-mcconnell-log", "title": "Log of Commander McConnell", "evidence": "documented content, new text",
+    "text": "Commander McConnell, Old Empire, 3382. My charges at the control nexus failed. I have touched their minds. The Ancients ARE the Endurium: living crystal, slow beyond our reckoning. To them we are a virus, and this world is their last defence. Whoever reads this: you need the Orb to survive the approach, the Cone to find the nexus, and a bomb far greater than mine.",
+    "setsFlag": "lore_ancients_are_endurium", "logNote": "McConnell's log: the Ancients are the Endurium itself. They see carbon life as a virus, and the Crystal Planet is their last defence." }
+]
