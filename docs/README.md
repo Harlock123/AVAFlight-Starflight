@@ -78,6 +78,7 @@ Verification so far:
 | [docs/THIRD_PARTY.md](THIRD_PARTY.md) | Licences and asset provenance |
 | [docs/KNOWN_ISSUES.md](KNOWN_ISSUES.md) | Caveats and unverified items |
 | [docs/MILESTONE_STATUS.md](MILESTONE_STATUS.md) | Milestone status and next tasks |
+| [CHANGELOG.md](../CHANGELOG.md) | Release history |
 
 ## Screenshots
 
