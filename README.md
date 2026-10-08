@@ -1,5 +1,7 @@
 # AVAFlight
 
+[![Publish](https://github.com/Harlock123/AVAFlight-Starflight/actions/workflows/publish.yml/badge.svg?branch=main)](https://github.com/Harlock123/AVAFlight-Starflight/actions/workflows/publish.yml)
+
 **AVAFlight** is a recreation of *Starflight*, the 1986 space exploration RPG. It is built with **.NET 10** and **Avalonia 12** for Windows, Linux and macOS, and plays fully offline as a single-player game.
 
 You fly from Starport on Arth to explore 270 star systems and 811 planets. Along the way you:
