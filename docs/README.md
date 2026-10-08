@@ -80,6 +80,7 @@ Verification so far:
 | [docs/MILESTONE_STATUS.md](MILESTONE_STATUS.md) | Milestone status and next tasks |
 | [CHANGELOG.md](../CHANGELOG.md) | Release history |
 | [CONTRIBUTING.md](../CONTRIBUTING.md) | How to build, contribution rules, pull requests |
+| [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) | Contributor Covenant 2.1 |
 
 ## Screenshots
 

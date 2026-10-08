@@ -2,6 +2,8 @@
 
 Thanks for your interest in AVAFlight! Bug reports, fixes, fidelity research and new features are all welcome. This guide covers how to build the project, the rules for content, and how to send changes.
 
+Everyone taking part is expected to follow the [Code of Conduct](CODE_OF_CONDUCT.md).
+
 ## Getting started
 
 You need the **.NET SDK 10.0.400 or later**. `global.json` pins it, with `rollForward: latestFeature`. On Linux you also need an X11 or XWayland session to run the game. Tests run headlessly.
