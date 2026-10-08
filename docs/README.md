@@ -43,8 +43,8 @@ tools/screenshots.sh                              # regenerate screenshots/*.png
 ## Publish (self-contained single file)
 
 ```bash
-./publish.sh                    # win-x64 linux-x64 osx-x64 osx-arm64 -> publish/<rid>/AVAFlight[.exe]
-./publish.sh linux-arm64        # any other runtime identifier
+./publish.sh                    # win-x64 win-arm64 linux-x64 linux-arm64 osx-x64 osx-arm64 -> publish/<rid>/AVAFlight[.exe]
+./publish.sh linux-musl-x64     # any other runtime identifier
 pwsh ./publish.ps1              # Windows / PowerShell equivalent
 ```
 
@@ -55,15 +55,17 @@ dotnet publish src/AVAFlight.Avalonia -c Release -r win-x64   --self-contained -
 dotnet publish src/AVAFlight.Avalonia -c Release -r linux-x64 --self-contained -p:PublishSingleFile=true
 dotnet publish src/AVAFlight.Avalonia -c Release -r osx-x64   --self-contained -p:PublishSingleFile=true
 dotnet publish src/AVAFlight.Avalonia -c Release -r osx-arm64 --self-contained -p:PublishSingleFile=true
+dotnet publish src/AVAFlight.Avalonia -c Release -r win-arm64 --self-contained -p:PublishSingleFile=true
+dotnet publish src/AVAFlight.Avalonia -c Release -r linux-arm64 --self-contained -p:PublishSingleFile=true
 ```
 
-**CI:** `.github/workflows/publish.yml` runs the tests, publishes all four targets on their native GitHub runners (windows-latest, ubuntu-latest, macos-15-intel, macos-latest), smoke-tests each binary, and uploads the archives as artifacts. Pushing a `v*` tag attaches them to a GitHub release. If GitHub cannot allocate a macOS runner, `.github/workflows/retry-macos.yml` re-runs the cancelled jobs automatically (up to 3 attempts); real failures are never retried.
+**CI:** `.github/workflows/publish.yml` runs the tests, publishes six targets (Windows, Linux and macOS, each on x64 and arm64) on native GitHub runners, smoke-tests each binary, and uploads the archives as artifacts. Pushing a `v*` tag attaches them to a GitHub release. If GitHub cannot allocate a macOS or ARM runner, `.github/workflows/retry-macos.yml` re-runs the cancelled jobs automatically (up to 3 attempts); real failures are never retried.
 
 To verify a published binary, run `publish/<rid>/AVAFlight --smoke-test`. It prints `AVAFLIGHT_SMOKE_OK: main menu reached` and exits with code 0.
 
 Verification so far:
 
-- **All four required targets:** published and smoke-tested on native GitHub runners by the CI workflow.
+- **All six targets** (win-x64, win-arm64, linux-x64, linux-arm64, osx-x64, osx-arm64): published and smoke-tested on native GitHub runners by the CI workflow.
 - **linux-arm64:** also run and verified locally. See [docs/KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Documentation

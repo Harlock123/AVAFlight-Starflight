@@ -1,5 +1,5 @@
-# Builds and tests AVAFlight, publishes self-contained single-file executables for all four
-# targets, and smoke-tests each binary on its native platform (it must reach the main menu).
+# Builds and tests AVAFlight, publishes self-contained single-file executables for Windows,
+# Linux and macOS on both x64 and arm64, and smoke-tests each binary on its native platform (it must reach the main menu).
 # Pushing a tag like v1.0.0 also attaches the archives to a GitHub release.
 name: Publish
 
@@ -35,10 +35,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { rid: win-x64,   os: windows-latest, exe: AVAFlight.exe }
-          - { rid: linux-x64, os: ubuntu-latest,  exe: AVAFlight }
-          - { rid: osx-x64,   os: macos-15-intel, exe: AVAFlight }
-          - { rid: osx-arm64, os: macos-latest,   exe: AVAFlight }
+          - { rid: win-x64,     os: windows-latest,   exe: AVAFlight.exe }
+          - { rid: win-arm64,   os: windows-11-arm,   exe: AVAFlight.exe }
+          - { rid: linux-x64,   os: ubuntu-latest,    exe: AVAFlight }
+          - { rid: linux-arm64, os: ubuntu-24.04-arm, exe: AVAFlight }
+          - { rid: osx-x64,     os: macos-15-intel,   exe: AVAFlight }
+          - { rid: osx-arm64,   os: macos-latest,     exe: AVAFlight }
     runs-on: ${{ matrix.os }}
     defaults:
       run:

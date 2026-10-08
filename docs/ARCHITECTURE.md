@@ -148,8 +148,8 @@ Native libraries are bundled with `IncludeNativeLibrariesForSelfExtract=true`. O
 
 | Target | Bundled native libraries |
 |---|---|
-| win-x64 | libSkiaSharp, libHarfBuzzSharp, av_libglesv2 (ANGLE), SDL3 |
-| linux-x64 | libSkiaSharp, libHarfBuzzSharp, libSDL3 (X11 and Wayland come from the system) |
+| win-x64, win-arm64 | libSkiaSharp, libHarfBuzzSharp, av_libglesv2 (ANGLE), SDL3 |
+| linux-x64, linux-arm64 | libSkiaSharp, libHarfBuzzSharp, libSDL3 (X11 and Wayland come from the system) |
 | osx-x64, osx-arm64 | libSkiaSharp, libHarfBuzzSharp, libAvaloniaNative, libSDL3 |
 
 Native `.pdb` files from packages are stripped (`AvaFlightRemoveNativePdbs` target). Managed symbols are embedded. Each publish folder therefore contains exactly one file. See README.md for the commands and KNOWN_ISSUES.md for what has and has not been run.

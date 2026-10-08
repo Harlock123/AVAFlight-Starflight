@@ -14,7 +14,7 @@ Status as of 2026-10-08. "Verified" means it was checked by running tests, the a
 | 8 | Story and progression | **Done** | Story flags; Orb / Cone / Egg / Nexus win path (full scripted playthrough test); McConnell's log; Thrynn deception about Elan; captain's log; victory screen (screenshots 12, 13, 15) |
 | 9 | Full audio | **Done (Linux verified)** | 9 synthesised music cues with cross-fades and 19 effects; independent volumes; silent fallback (tests; live PipeWire stream observed) |
 | 10 | Modern mode, accessibility, polish | **Done, except gamepad hardware testing** | Policy-driven Modern features; settings screen; key rebinding; font scale; text speed; high contrast; named save slots (screenshots 16–17). The gamepad code has not been tested with a physical controller. |
-| 11 | Single-file publishing and final docs | **Done** | `publish.sh` / `publish.ps1` produce one file per target. All four required targets are published and smoke-tested on native GitHub runners via `.github/workflows/publish.yml` (run https://github.com/Harlock123/AVAFlight-Starflight/actions/runs/37804677552); linux-arm64 is also verified locally. All 17 screenshots are current. All docs written. 85/85 tests passing. |
+| 11 | Single-file publishing and final docs | **Done** | `publish.sh` / `publish.ps1` produce one file per target. All four required targets, plus win-arm64 and linux-arm64 (added after 1.0.0), are published and smoke-tested on native GitHub runners via `.github/workflows/publish.yml` (run https://github.com/Harlock123/AVAFlight-Starflight/actions/runs/37804677552); linux-arm64 is also verified locally. All 17 screenshots are current. All docs written. 85/85 tests passing. |
 
 ## Test suite
 
@@ -25,6 +25,6 @@ Passed!  - Failed: 0, Passed: 85, Skipped: 0, Total: 85
 
 ## Next concrete tasks
 
-1. Play briefly on Windows and macOS with audio on (download the CI artifacts), and record the results here. CI already verifies start-up on all four targets.
+1. Play briefly on Windows and macOS with audio on (download the CI artifacts), and record the results here. CI verifies start-up on all six targets (x64 and arm64).
 2. Test a physical gamepad (hot-plug, D-pad and stick menus, deadzone).
 3. Optional fidelity work: reproduce the original's 32 flux pairs and 70 nebulae if their positions are confirmed as publishable facts; the Velox probe quiz; minor artifacts if their DOS names can be verified.

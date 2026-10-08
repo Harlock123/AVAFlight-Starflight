@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # Publishes AVAFlight as self-contained single-file executables.
-# Usage: ./publish.sh [rid ...]     (default: win-x64 linux-x64 osx-x64 osx-arm64)
+# Usage: ./publish.sh [rid ...]     (default: win-x64 win-arm64 linux-x64 linux-arm64 osx-x64 osx-arm64)
 # Output: publish/<rid>/AVAFlight[.exe]
 set -euo pipefail
 cd "$(dirname "$0")"
 RIDS=("$@")
-if [ ${#RIDS[@]} -eq 0 ]; then RIDS=(win-x64 linux-x64 osx-x64 osx-arm64); fi
+if [ ${#RIDS[@]} -eq 0 ]; then RIDS=(win-x64 win-arm64 linux-x64 linux-arm64 osx-x64 osx-arm64); fi
 for rid in "${RIDS[@]}"; do
   echo "==> Publishing $rid"
   rm -rf "publish/$rid"

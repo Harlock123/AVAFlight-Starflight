@@ -75,7 +75,7 @@ Starflight is still copyrighted by Electronic Arts.
   - screens and rendering: `UI/`, using `Avalonia.Headless`
 - **Probabilistic tests** must use a seeded RNG and clearly labelled statistical bounds.
 - **If you change how a screen looks**, regenerate the documentation screenshots with `tools/screenshots.sh`. Look at the results before committing them.
-- **`dotnet test` must pass.** CI runs the tests, then publishes and smoke-tests all four platforms.
+- **`dotnet test` must pass.** CI runs the tests, then publishes and smoke-tests all six targets (Windows, Linux and macOS on x64 and arm64).
 
 ## Pull requests
 

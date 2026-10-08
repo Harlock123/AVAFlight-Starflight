@@ -1,6 +1,6 @@
 # Publishes AVAFlight as self-contained single-file executables.
-# Usage: ./publish.ps1 [-Rids win-x64,linux-x64,osx-x64,osx-arm64]
-param([string[]]$Rids = @("win-x64", "linux-x64", "osx-x64", "osx-arm64"))
+# Usage: ./publish.ps1 [-Rids win-x64,win-arm64,linux-x64,linux-arm64,osx-x64,osx-arm64]
+param([string[]]$Rids = @("win-x64", "win-arm64", "linux-x64", "linux-arm64", "osx-x64", "osx-arm64"))
 $ErrorActionPreference = "Stop"
 Set-Location $PSScriptRoot
 foreach ($rid in $Rids) {
