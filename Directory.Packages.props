@@ -16,7 +16,7 @@
     <!-- SDL3 (zlib) + C# bindings (MIT): audio output and gamepad input only; Avalonia owns the window. -->
     <PackageVersion Include="ppy.SDL3-CS" Version="2026.1002.1" />
     <PackageVersion Include="xunit.v3" Version="3.2.2" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="4.0.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.10.1" />
   </ItemGroup>
 </Project>
