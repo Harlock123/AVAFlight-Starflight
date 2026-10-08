@@ -1,0 +1,36 @@
+# Dependabot version updates. NuGet versions are pinned centrally in Directory.Packages.props.
+version: 2
+updates:
+  - package-ecosystem: nuget
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps"
+    groups:
+      # All Avalonia packages must share one version (AvaloniaVersion in Directory.Packages.props).
+      avalonia:
+        patterns: ["Avalonia*"]
+      test-tooling:
+        patterns: ["xunit*", "Microsoft.NET.Test.Sdk"]
+    ignore:
+      # SkiaSharp must match the version Avalonia.Skia depends on (3.119.x for Avalonia 12.1);
+      # move it together with an Avalonia upgrade, not on its own.
+      - dependency-name: SkiaSharp
+        update-types: ["version-update:semver-major"]
+      # Avalonia.Headless.XUnit 12.1 is built against xunit.v3 3.x.
+      - dependency-name: xunit.v3
+        update-types: ["version-update:semver-major"]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    commit-message:
+      prefix: "ci"
+    groups:
+      actions:
+        patterns: ["*"]

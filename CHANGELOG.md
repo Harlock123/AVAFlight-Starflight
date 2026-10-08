@@ -5,6 +5,7 @@ All notable changes to AVAFlight are documented here. The format follows [Keep a
 ## [Unreleased]
 
 ### Added
+- Dependabot: weekly NuGet and GitHub Actions update PRs (Avalonia packages grouped; SkiaSharp and xunit.v3 major updates held back to stay compatible with Avalonia).
 - SECURITY.md, issue forms (bug, fidelity, feature request) and a pull request template.
 - CODE_OF_CONDUCT.md: Contributor Covenant 2.1.
 - CONTRIBUTING.md: build, project, fidelity, legal and pull-request guidelines.
