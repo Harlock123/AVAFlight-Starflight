@@ -53,6 +53,8 @@ dotnet publish src/AVAFlight.Avalonia -c Release -r osx-x64   --self-contained -
 dotnet publish src/AVAFlight.Avalonia -c Release -r osx-arm64 --self-contained -p:PublishSingleFile=true
 ```
 
+**CI:** `.github/workflows/publish.yml` runs the tests, publishes all four targets on their native GitHub runners (windows-latest, ubuntu-latest, macos-15-intel, macos-latest), smoke-tests each binary, and uploads the archives as artifacts. Pushing a `v*` tag attaches them to a GitHub release.
+
 To verify a published binary, run `publish/<rid>/AVAFlight --smoke-test`. It prints `AVAFLIGHT_SMOKE_OK: main menu reached` and exits with code 0.
 
 Verification so far:

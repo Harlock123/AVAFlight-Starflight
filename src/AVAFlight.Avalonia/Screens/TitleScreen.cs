@@ -104,6 +104,9 @@ public sealed class TitleScreen : Screen
         {
             _smokeDone = true;
             Console.WriteLine("AVAFLIGHT_SMOKE_OK: main menu reached");
+            // GUI-subsystem builds (Windows) have no console in CI; optionally also write the marker to a file.
+            if (Environment.GetEnvironmentVariable("AVAFLIGHT_SMOKE_FILE") is { Length: > 0 } marker)
+                File.WriteAllText(marker, "AVAFLIGHT_SMOKE_OK: main menu reached\n");
             if (global::Avalonia.Application.Current?.ApplicationLifetime is IClassicDesktopStyleApplicationLifetime d) d.Shutdown(0);
         }
     }
