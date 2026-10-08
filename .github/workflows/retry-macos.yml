@@ -1,0 +1,50 @@
+# GitHub occasionally cannot allocate a macOS arm64 runner ("The job was not acquired by Runner
+# of type hosted even after multiple attempts"). That cancels the osx-arm64 job and fails the
+# whole Publish run even though nothing is wrong with the code.
+#
+# This workflow re-runs the failed jobs of a Publish run, but only when every job that did not
+# succeed is a macOS job that was cancelled or never started. Real build/test/smoke-test
+# failures are left alone. Re-runs stop after MAX_ATTEMPTS attempts of the same run.
+name: Retry macOS runner shortage
+
+on:
+  workflow_run:
+    workflows: [Publish]
+    types: [completed]
+
+permissions:
+  actions: write
+  contents: read
+
+env:
+  MAX_ATTEMPTS: "3"
+
+jobs:
+  retry:
+    if: github.event.workflow_run.conclusion == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Re-run if only macOS jobs were cancelled
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+          ATTEMPT: ${{ github.event.workflow_run.run_attempt }}
+        run: |
+          set -euo pipefail
+          if [ "$ATTEMPT" -ge "$MAX_ATTEMPTS" ]; then
+            echo "Run $RUN_ID is already on attempt $ATTEMPT of $MAX_ATTEMPTS; not retrying."
+            exit 0
+          fi
+          jobs=$(gh api "repos/$REPO/actions/runs/$RUN_ID/attempts/$ATTEMPT/jobs?per_page=100")
+          echo "$jobs" | jq -r '.jobs[] | "\(.name): \(.conclusion)"'
+          # Jobs that neither succeeded nor were skipped because a dependency was missing.
+          problems=$(echo "$jobs" | jq '[.jobs[] | select(.conclusion != "success" and .conclusion != "skipped")]')
+          count=$(echo "$problems" | jq 'length')
+          runner_shortage=$(echo "$problems" | jq '[.[] | select((.name | test("osx-")) and .conclusion == "cancelled")] | length')
+          if [ "$count" -gt 0 ] && [ "$count" -eq "$runner_shortage" ]; then
+            echo "Only macOS jobs were cancelled (runner shortage). Re-running failed jobs of run $RUN_ID."
+            gh run rerun "$RUN_ID" --failed --repo "$REPO"
+          else
+            echo "Failure is not a macOS runner shortage; leaving it for a human."
+          fi
