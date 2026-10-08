@@ -4,7 +4,7 @@
 
 - **Build machine.** Everything was built and tested on **Linux arm64** (an Arch VM with a Wayland desktop). No x86-64 emulator or Windows/macOS machine was available.
   - **linux-arm64** single-file build: run and verified. `--smoke-test` reached the main menu and exited 0. The bundled `libSkiaSharp`, `libHarfBuzzSharp` and `libSDL3` were extracted and loaded. The debug build was also run interactively on the desktop, and PipeWire showed its SDL3 audio stream.
-  - **win-x64, linux-x64, osx-x64, osx-arm64** single-file builds: **published, but not run.** The binaries have the correct formats (PE32+ x86-64, ELF x86-64, Mach-O x86-64, Mach-O arm64) and contain the expected native libraries. Each should be verified on its platform with `AVAFlight --smoke-test`, which prints `AVAFLIGHT_SMOKE_OK` and exits 0. **Milestone 11 is not complete until that has been done.**
+  - **win-x64, linux-x64, osx-x64, osx-arm64** single-file builds: **published and smoke-tested on native GitHub-hosted runners** (windows-latest, ubuntu-latest with Xvfb, macos-15-intel, macos-latest) by `.github/workflows/publish.yml`. Each reached the main menu, wrote the `AVAFLIGHT_SMOKE_OK` marker and exited 0 (run https://github.com/Harlock123/AVAFlight-Starflight/actions/runs/37804677552). CI runs with `--mute`, because runners have no audio device; interactive play with audio on Windows and macOS has not been checked by a person yet.
 - **Screenshots.** The brief asks for screenshots captured on Windows. They were rendered on Linux by Avalonia's headless Skia renderer, which uses the same Skia drawing code as the desktop app. Fonts are embedded, so text looks the same on every OS. Window chrome is not included.
 - **Gamepad.** The SDL3 gamepad code builds, initialises, and handles a missing gamepad, but **no physical gamepad was available for testing.**
 - **Audio.** Audio output was confirmed only on Linux (PipeWire). The synthesis and mixer are covered by unit tests.
@@ -52,7 +52,7 @@ See FIDELITY.md for the full matrix. The main **reconstructed** (not evidence-ba
 
 ## Deferred
 
-- Platform-native smoke runs for win-x64, linux-x64, osx-x64 and osx-arm64; see above.
+- Interactive play with audio on Windows and macOS (CI smoke tests cover start-up only).
 - A macOS `.app` bundle and signing.
 - A Windows icon and version resource.
 - Gamepad button remapping. Keyboard remapping is implemented; gamepad bindings use defaults.

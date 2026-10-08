@@ -59,8 +59,8 @@ To verify a published binary, run `publish/<rid>/AVAFlight --smoke-test`. It pri
 
 Verification so far:
 
-- **linux-arm64:** run and verified.
-- **The four required targets:** built, and their binary formats checked, but **not yet run on their native platforms**. See [docs/KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+- **All four required targets:** published and smoke-tested on native GitHub runners by the CI workflow.
+- **linux-arm64:** also run and verified locally. See [docs/KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
 ## Documentation
 
