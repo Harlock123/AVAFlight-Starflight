@@ -5,6 +5,7 @@ All notable changes to AVAFlight are documented here. The format follows [Keep a
 ## [Unreleased]
 
 ### Added
+- CONTRIBUTING.md: build, project, fidelity, legal and pull-request guidelines.
 - README: a full-size gameplay screenshot (terrain vehicle) near the top.
 - README: a CI status badge for the Publish workflow.
 - CI: `retry-macos.yml` automatically re-runs Publish runs that failed only because GitHub could not allocate a macOS runner. It makes up to 3 attempts. Real build, test and smoke-test failures are never retried.

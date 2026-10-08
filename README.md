@@ -77,6 +77,7 @@ Verification so far:
 | [docs/KNOWN_ISSUES.md](docs/KNOWN_ISSUES.md) | Caveats and unverified items |
 | [docs/MILESTONE_STATUS.md](docs/MILESTONE_STATUS.md) | Milestone status and next tasks |
 | [CHANGELOG.md](CHANGELOG.md) | Release history |
+| [CONTRIBUTING.md](CONTRIBUTING.md) | How to build, contribution rules, pull requests |
 
 ## Screenshots
 
