@@ -4,6 +4,9 @@ All notable changes to AVAFlight are documented here. The format follows [Keep a
 
 ## [Unreleased]
 
+### Changed
+- Test tooling: `xunit.runner.visualstudio` 3.1.5 → 4.0.0 (Dependabot, #1). No effect on the game.
+
 ## [1.1.0] - 2026-10-08
 
 ### Added
