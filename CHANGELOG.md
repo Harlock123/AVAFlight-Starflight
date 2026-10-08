@@ -4,6 +4,8 @@ All notable changes to AVAFlight are documented here. The format follows [Keep a
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-08
+
 ### Added
 - Windows on ARM (win-arm64) and Linux ARM (linux-arm64) builds. `publish.sh` / `publish.ps1` now build all six targets by default, and CI publishes and smoke-tests them on native ARM runners. The runner-shortage retry also covers the ARM runners.
 - Dependabot: weekly NuGet and GitHub Actions update PRs (Avalonia packages grouped; SkiaSharp and xunit.v3 major updates held back to stay compatible with Avalonia).
@@ -96,5 +98,6 @@ First release. Self-contained single-file builds for Windows x64, Linux x64, mac
 **Licence**
 - MIT. The bundled fonts are under the SIL Open Font License.
 
-[Unreleased]: https://github.com/Harlock123/AVAFlight-Starflight/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Harlock123/AVAFlight-Starflight/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/Harlock123/AVAFlight-Starflight/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Harlock123/AVAFlight-Starflight/releases/tag/v1.0.0
