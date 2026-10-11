@@ -23,6 +23,28 @@ There are two presets:
 
 ![AVAFlight gameplay: driving the terrain vehicle across a jungle world, with the ship, wildlife, crew status and the terrain-vehicle menu](docs/screenshots/08_terrain_vehicle.png)
 
+## Download and run
+
+Ready-to-run builds for Windows, macOS and Linux, on both Intel/AMD and ARM, are on the
+[Releases page](https://github.com/Harlock123/AVAFlight-Starflight/releases). **Latest build** is rebuilt on
+every push to `main`. Each download is one self-contained executable: no .NET install is
+needed.
+
+```bash
+tar -xzf AVAFlight-linux-arm64.tar.gz      # or linux-x64, osx-arm64, osx-x64
+./AVAFlight
+```
+
+On Windows, unzip `AVAFlight-win-x64.zip` (or `-win-arm64`) and run `AVAFlight.exe`. On macOS, if
+Gatekeeper refuses to open it, run `xattr -d com.apple.quarantine AVAFlight` once.
+
+### Linux: sound and gamepads
+
+Nothing extra to install. Sound and gamepad support (SDL3) are built into the download for every
+platform, ARM included, so you don't need `alsa-utils` (`aplay`) or a system SDL. Sound goes
+out through whatever your desktop already runs (PipeWire, PulseAudio or ALSA); if no audio
+device can be opened the game still runs, silently. You do need an X11 or XWayland session.
+
 ## Prerequisites
 
 - **.NET SDK 10.0.400 or later.** `global.json` pins the 10.0.400 SDK with `rollForward: latestFeature`.
@@ -57,7 +79,7 @@ dotnet publish src/AVAFlight.Avalonia -c Release -r win-arm64 --self-contained -
 dotnet publish src/AVAFlight.Avalonia -c Release -r linux-arm64 --self-contained -p:PublishSingleFile=true
 ```
 
-**CI:** `.github/workflows/publish.yml` runs the tests, publishes six targets (Windows, Linux and macOS, each on x64 and arm64) on native GitHub runners, smoke-tests each binary, and uploads the archives as artifacts. Pushing a `v*` tag attaches them to a GitHub release. If GitHub cannot allocate a macOS or ARM runner, `.github/workflows/retry-macos.yml` re-runs the cancelled jobs automatically (up to 3 attempts); real failures are never retried.
+**CI:** `.github/workflows/publish.yml` runs the tests, publishes six targets (Windows, Linux and macOS, each on x64 and arm64) on native GitHub runners, smoke-tests each binary, and uploads the archives as artifacts. Every push to `main` refreshes the rolling `latest` pre-release with them, and a `v*` tag makes a proper release. If GitHub cannot allocate a macOS or ARM runner, `.github/workflows/retry-macos.yml` re-runs the cancelled jobs automatically (up to 3 attempts); real failures are never retried.
 
 To verify a published binary, run `publish/<rid>/AVAFlight --smoke-test`. It prints `AVAFLIGHT_SMOKE_OK: main menu reached` and exits with code 0.
 
