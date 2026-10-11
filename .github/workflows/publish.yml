@@ -1,6 +1,6 @@
 # Builds and tests AVAFlight, publishes self-contained single-file executables for Windows,
 # Linux and macOS on both x64 and arm64, and smoke-tests each binary on its native platform (it must reach the main menu).
-# Pushing a tag like v1.0.0 also attaches the archives to a GitHub release.
+# Pushes to main refresh the rolling "latest" pre-release; a tag like v1.0.0 makes a proper release.
 name: Publish
 
 on:
@@ -12,6 +12,12 @@ on:
 
 permissions:
   contents: read
+
+# A newer push to the same branch cancels an older run still in progress, so the rolling "latest"
+# release can never be overwritten by an older build that finished later.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 env:
   DOTNET_NOLOGO: "1"
@@ -101,8 +107,9 @@ jobs:
           if-no-files-found: error
 
   release:
-    name: Attach to release
-    if: startsWith(github.ref, 'refs/tags/v')
+    name: Release
+    # Pushes to main refresh the rolling "latest" pre-release; a v* tag makes a proper release.
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
     needs: publish
     runs-on: ubuntu-latest
     permissions:
@@ -112,7 +119,23 @@ jobs:
         with:
           path: dist
           merge-multiple: true
-      - uses: softprops/action-gh-release@v3
-        with:
-          files: dist/*
-          generate_release_notes: true
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          # Retry GitHub API calls a few times: a transient error must not leave a half-done release.
+          retry() { for i in 1 2 3 4; do "$@" && return 0; echo "attempt $i failed: $*" >&2; sleep $((i * 15)); done; return 1; }
+          notes="Built automatically from ${GITHUB_SHA::7} on main. Unzip or untar and run AVAFlight (./AVAFlight on Linux and macOS, AVAFlight.exe on Windows)."
+          if [[ "$GITHUB_REF" == refs/tags/v* ]]; then
+            retry gh release create "$GITHUB_REF_NAME" dist/* --title "AVAFlight $GITHUB_REF_NAME" --generate-notes
+          elif gh release view latest >/dev/null 2>&1; then
+            # A rolling pre-release of the newest main build, updated in place and never deleted: replace the
+            # files first (the old release stays usable if this fails), then move the tag, then the notes.
+            retry gh release upload latest dist/* --clobber
+            retry gh api -X PATCH "repos/$GH_REPO/git/refs/tags/latest" -f sha="$GITHUB_SHA" -F force=true
+            retry gh release edit latest --prerelease --target "$GITHUB_SHA" --title "Latest build (main)" --notes "$notes"
+          else
+            retry gh release create latest dist/* --prerelease --target "$GITHUB_SHA" \
+              --title "Latest build (main)" --notes "$notes"
+          fi
